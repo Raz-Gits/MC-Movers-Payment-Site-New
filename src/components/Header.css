@@ -1,0 +1,223 @@
+/* Header styles */
+.header {
+  background: rgba(10, 33, 50, 0.95);
+  backdrop-filter: blur(20px);
+  padding: 16px 24px;
+  border-bottom: 1px solid rgba(230, 57, 70, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.company-branding {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo-container {
+  flex-shrink: 0;
+}
+
+.company-logo {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  transition: transform 0.3s ease;
+}
+
+.company-logo:hover {
+  transform: scale(1.05);
+}
+
+.logo-placeholder {
+  height: 80px;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-shield {
+  background: linear-gradient(135deg, #1e40af 0%, #dc2626 50%, #7c3aed 100%);
+  background-size: 200% 200%;
+  animation: logoGradient 6s ease infinite;
+  width: 60px;
+  height: 80px;
+  border-radius: 8px 8px 20px 8px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.logo-shield:hover {
+  transform: scale(1.05);
+}
+
+@keyframes logoGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.logo-mc {
+  font-size: 0.8rem;
+  font-weight: 900;
+  color: white;
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+.logo-movers {
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+  color: white;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: 0.5rem;
+  font-weight: 800;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 1px 3px rgba(220, 38, 38, 0.3);
+  line-height: 1;
+}
+
+.logo-truck {
+  font-size: 1rem;
+  margin: 2px 0;
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.3));
+  line-height: 1;
+}
+
+.logo-tagline {
+  font-size: 0.4rem;
+  color: #fbbf24;
+  font-style: italic;
+  text-align: center;
+  line-height: 1;
+  font-weight: 500;
+  text-shadow: 0 0 2px rgba(251, 191, 36, 0.3);
+}
+
+.company-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.company-name {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.company-tagline {
+  font-size: 0.9rem;
+  color: #E63946;
+  margin: 0;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact-info {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.phone, .email {
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 10px 20px;
+  background: rgba(230, 57, 70, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(230, 57, 70, 0.3);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.phone:hover, .email:hover {
+  background: rgba(230, 57, 70, 0.2);
+  border-color: rgba(230, 57, 70, 0.5);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(230, 57, 70, 0.2);
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  
+  .company-branding {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .logo-placeholder {
+    height: 60px;
+    width: 45px;
+  }
+  
+  .logo-shield {
+    width: 45px;
+    height: 60px;
+    padding: 6px;
+  }
+  
+  .logo-mc {
+    font-size: 0.6rem;
+  }
+  
+  .logo-movers {
+    font-size: 0.4rem;
+    padding: 1px 3px;
+  }
+  
+  .logo-truck {
+    font-size: 0.8rem;
+  }
+  
+  .logo-tagline {
+    font-size: 0.3rem;
+  }
+  
+  .company-text {
+    align-items: center;
+  }
+  
+  .company-name {
+    font-size: 2rem;
+  }
+  
+  .contact-info {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .phone, .email {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+}

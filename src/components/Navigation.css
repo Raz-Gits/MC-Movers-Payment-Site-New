@@ -1,0 +1,135 @@
+/* Navigation styles */
+.navigation {
+  background: rgba(10, 33, 50, 0.95);
+  backdrop-filter: blur(20px);
+  padding: 16px 24px;
+  border-bottom: 1px solid rgba(230, 57, 70, 0.1);
+  position: sticky;
+  top: 112px; /* keep nav always below header height */
+  z-index: 99;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.navigation.scrolled {
+  padding: 10px 20px;
+  background: rgba(10, 33, 50, 0.98);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  /* do not change top so it doesn't overlap header */
+}
+
+.nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.nav-list-top {
+  gap: 12px;
+}
+
+.nav-list-bottom {
+  justify-content: center;
+}
+
+.nav-list li {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.nav-list a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 10px 18px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.navigation.scrolled .nav-list a {
+  font-size: 12px;
+  padding: 8px 16px;
+}
+
+.nav-list a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(230, 57, 70, 0.1);
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.nav-list a:hover::before {
+  left: 0;
+}
+
+.nav-list a:hover {
+  color: #ffffff;
+  border-color: rgba(230, 57, 70, 0.3);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(230, 57, 70, 0.15);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .navigation {
+    padding: 12px 10px;
+    top: 120px; /* allow for taller mobile header */
+  }
+  
+  .navigation.scrolled {
+    padding: 8px 10px;
+    top: 120px; /* maintain same offset while scrolled */
+  }
+  
+  .nav-container {
+    gap: 10px;
+  }
+  
+  .nav-list {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .nav-list-top,
+  .nav-list-bottom {
+    flex-direction: column;
+  }
+  
+  .nav-list a {
+    text-align: center;
+    font-size: 12px;
+    padding: 10px 16px;
+    width: 100%;
+  }
+  
+  .navigation.scrolled .nav-list a {
+    font-size: 11px;
+    padding: 8px 14px;
+  }
+}

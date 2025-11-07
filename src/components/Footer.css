@@ -1,0 +1,304 @@
+/* Footer with MC Movers logo */
+.footer {
+  background: linear-gradient(135deg, #0A2132 0%, #1a365d 100%);
+  padding: 60px 20px 30px;
+  border-top: 1px solid rgba(230, 57, 70, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 30% 20%, rgba(230, 57, 70, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 70% 80%, rgba(10, 33, 50, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-brand {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.mc-movers-logo {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  margin-bottom: 16px;
+}
+
+.mc-movers-logo:hover {
+  transform: scale(1.05);
+}
+
+.footer-logo-img {
+  height: 120px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));
+  transition: all 0.3s ease;
+}
+
+.footer-logo-img:hover {
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.4));
+}
+
+.footer-logo-shield {
+  background: linear-gradient(135deg, #0A2132 0%, #E63946 50%, #1a365d 100%);
+  background-size: 200% 200%;
+  animation: logoGradient 6s ease infinite;
+  width: 150px;
+  height: 180px;
+  border-radius: 20px 20px 40px 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+@keyframes logoGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.footer-logo-mc {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: white;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+.footer-logo-movers {
+  background: linear-gradient(135deg, #E63946, #f56565);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 8px rgba(230, 57, 70, 0.3);
+  line-height: 1;
+}
+
+.footer-logo-truck {
+  font-size: 2rem;
+  margin: 8px 0;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+  line-height: 1;
+}
+
+.footer-logo-tagline {
+  font-size: 0.7rem;
+  color: #fbbf24;
+  font-style: italic;
+  text-align: center;
+  line-height: 1.2;
+  font-weight: 500;
+  text-shadow: 0 0 4px rgba(251, 191, 36, 0.3);
+}
+
+.footer-tagline {
+  font-size: 1rem;
+  color: #a0aec0;
+  font-weight: 400;
+  margin: 0;
+}
+
+.footer-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.compliance-info,
+.contact-info,
+.legal-links {
+  text-align: center;
+}
+
+.compliance-info h4,
+.contact-info h4,
+.legal-links h4 {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+
+.compliance-info p,
+.contact-info p {
+  color: #a0aec0;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.contact-info .contact-line {
+  display: inline-block;
+}
+
+.contact-info .contact-line .contact-link {
+  margin: 0 4px;
+}
+
+.contact-info .email-group {
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.contact-info .location-group {
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.contact-info a.contact-link {
+  color: #a0aec0;
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+  white-space: nowrap;
+}
+
+.contact-info a.contact-link:hover {
+  color: #ffffff;
+  border-bottom-color: rgba(255, 255, 255, 0.4);
+}
+
+.legal-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.legal-links a {
+  color: #E63946;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.legal-links a:hover {
+  color: #f56565;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 30px;
+  text-align: center;
+}
+
+.trust-badges {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.trust-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.trust-badge:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+.badge-icon {
+  font-size: 1rem;
+}
+
+.badge-text {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.copyright {
+  color: #718096;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .footer {
+    padding: 40px 10px 20px;
+  }
+  
+  .footer-brand {
+    margin-bottom: 30px;
+  }
+  
+  .footer-logo-img {
+    height: 100px;
+  }
+  
+  .footer-logo-shield {
+    width: 120px;
+    height: 150px;
+    padding: 16px;
+  }
+  
+  .footer-logo-mc {
+    font-size: 1.5rem;
+  }
+  
+  .footer-logo-movers {
+    font-size: 0.8rem;
+    padding: 4px 12px;
+  }
+  
+  .footer-logo-truck {
+    font-size: 1.5rem;
+  }
+  
+  .footer-logo-tagline {
+    font-size: 0.6rem;
+  }
+  
+  .footer-info {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+  
+  .trust-badges {
+    gap: 16px;
+  }
+  
+  .trust-badge {
+    padding: 6px 12px;
+  }
+  
+  .badge-text {
+    font-size: 0.75rem;
+  }
+}
