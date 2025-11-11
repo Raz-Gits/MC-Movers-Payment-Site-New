@@ -47,7 +47,8 @@ Step 7: Keep the confirmation number for your records`
 3. Enter your deposit amount
 4. Note: Moving Deposit - Your Name - Job #123
 5. Confirm payment and save a screenshot
-6. Venmo adds a 3.5% processing fee`
+6. Venmo adds a 3.5% processing fee
+Link: https://venmo.com/code?user_id=4394896270034661910&created=1762552713.5909119&printed=1`
     },
     {
       id: 'creditcard',

@@ -62,7 +62,7 @@ const Footer = () => {
               <span className="badge-text">4.9/5 Rating</span>
             </div>
           </div>
-          <p className="copyright">© 2024 MC Movers. All rights reserved.</p>
+          <p className="copyright">© 2025 MC Movers. All rights reserved.</p>
         </div>
       </div>
     </footer>

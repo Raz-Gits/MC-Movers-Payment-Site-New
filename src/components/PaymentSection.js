@@ -5,6 +5,43 @@ const PaymentSection = ({ id, title, icon, description, features, instructions, 
   const [isExpanded, setIsExpanded] = useState(true);
   const [showFullTerms, setShowFullTerms] = useState(false);
   const isTerms = id === 'terms';
+  const isZelle = id === 'zelle';
+  const isCheck = id === 'check';
+  const isVenmo = id === 'venmo';
+  const hasMedia = isZelle || isCheck || isVenmo;
+  const zelleImageSrc = `${process.env.PUBLIC_URL}/zelle.jpg`;
+  const checkImageSrc = `${process.env.PUBLIC_URL}/${encodeURIComponent('Screenshot 2025-11-07 at 4.19.13 PM.png')}`;
+  const venmoImageSrc = `${process.env.PUBLIC_URL}/${encodeURIComponent('Screenshot 2025-11-07 at 16.15.48.jpeg')}`;
+
+  const renderParagraphs = (text) =>
+    text
+      .split('\n')
+      .filter((line) => line.trim() !== '')
+      .map((line, index) => {
+        const isSection = line.startsWith('SECTION');
+        const isNote = line.startsWith('Note:');
+        let className = 'step';
+        if (isSection) className = 'section-header';
+        else if (isNote) className = 'note';
+
+        if (isVenmo && line.startsWith('Link:')) {
+          const url = line.replace('Link:', '').trim();
+          return (
+            <p key={`${id}-line-${index}`} className={className}>
+              Link:{' '}
+              <a href={url} target="_blank" rel="noopener noreferrer">
+                {url}
+              </a>
+            </p>
+          );
+        }
+
+        return (
+          <p key={`${id}-line-${index}`} className={className}>
+            {line}
+          </p>
+        );
+      });
 
   const toggleExpand = () => setIsExpanded((prev) => !prev);
 
@@ -50,34 +87,49 @@ const PaymentSection = ({ id, title, icon, description, features, instructions, 
             <div className="payment-details">
               <div className="instructions-section">
                 {!isTerms && <h3>Step-by-Step Instructions:</h3>}
-                <div className="instructions-text">
-                  {isTerms && !showFullTerms ? (
-                    <>
-                      <p>{section1Preview}</p>
-                      <button 
-                        className="view-more-button"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setShowFullTerms(true);
-                        }}
-                      >
-                        Press to view more
-                      </button>
-                    </>
-                  ) : (
-                    instructions.split('\n').map((line, index) => {
-                      const isSection = line.startsWith('SECTION');
-                      const isNote = line.startsWith('Note:');
-                      let className = 'step';
-                      if (isSection) className = 'section-header';
-                      else if (isNote) className = 'note';
-                      return (
-                        <p key={index} className={className}>
-                          {line}
-                        </p>
-                      );
-                    })
-                  )}
+                <div className={`instructions-text ${hasMedia ? 'with-media' : ''}`}>
+                  <div className="instructions-body">
+                    <div className="instructions-list">
+                      {isTerms && !showFullTerms ? (
+                        <>
+                          <p>{section1Preview}</p>
+                          <button 
+                            className="view-more-button"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setShowFullTerms(true);
+                            }}
+                          >
+                            Press to view more
+                          </button>
+                        </>
+                      ) : (
+                        renderParagraphs(instructions)
+                      )}
+                    </div>
+                    {hasMedia && (
+                      <div className="instructions-media">
+                        {isZelle && (
+                          <img
+                            src={zelleImageSrc}
+                            alt="Pay with Zelle"
+                          />
+                        )}
+                        {isCheck && (
+                          <img
+                            src={checkImageSrc}
+                            alt="Paper check example"
+                          />
+                        )}
+                        {isVenmo && (
+                          <img
+                            src={venmoImageSrc}
+                            alt="Venmo payment example"
+                          />
+                        )}
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
