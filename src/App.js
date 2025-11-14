@@ -52,23 +52,11 @@ Link: https://venmo.com/code?user_id=4394896270034661910&created=1762552713.5909
     },
     {
       id: 'creditcard',
-      title: 'Credit / Debit Card',
-      icon: '💳',
-      description: 'Alternative option - Card payment (5% fee)',
-      features: ['Secure processing', '5% processing fee', 'Widely accepted'],
-      instructions: `Step 1: Contact management to request a credit card payment link.
-Step 2: Have the following ready:
-   - Full Name
-   - Job Number
-   - Total Deposit Amount
-
-Step 3: Management will send you a secure payment link.
-Step 4: Complete your payment through that link.
-Step 5: You'll receive a confirmation email and receipt — keep it for your records.
-
-Important Notes:
-- A 5% processing fee applies to credit card payments.
-- This method is for those who prefer not to pay via check, Zelle, or Venmo.`
+      title: '',
+      icon: '',
+      description: '',
+      features: [],
+      instructions: ''
     },
     {
       id: 'auto',

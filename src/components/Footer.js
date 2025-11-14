@@ -50,15 +50,12 @@ const Footer = () => {
         <div className="footer-bottom">
           <div className="trust-badges">
             <div className="trust-badge">
-              <span className="badge-icon">🔒</span>
               <span className="badge-text">SSL Secured</span>
             </div>
             <div className="trust-badge">
-              <span className="badge-icon">✓</span>
               <span className="badge-text">Licensed</span>
             </div>
             <div className="trust-badge">
-              <span className="badge-icon">⭐</span>
               <span className="badge-text">4.9/5 Rating</span>
             </div>
           </div>

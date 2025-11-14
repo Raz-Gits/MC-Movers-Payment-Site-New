@@ -219,15 +219,13 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  background: rgba(255, 255, 255, 0.05);
+  background: transparent;
   padding: 8px 16px;
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
 }
 
 .trust-badge:hover {
-  background: rgba(255, 255, 255, 0.08);
   transform: translateY(-2px);
 }
 
